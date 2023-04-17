@@ -1,0 +1,34 @@
+﻿@model TicariOtomasyon.Models.Siniflar.Fatura
+@{
+    ViewBag.Title = "FaturaEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Fatura Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.SeriNo)
+    @Html.TextBoxFor(x => x.SeriNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.SiraNo)
+    @Html.TextBoxFor(x => x.SiraNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.VergiDairesi)
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Saat)
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+    <br />
+    <label for="satinalan">Satın Alan</label>
+    @Html.TextBoxFor(x => x.TedarikciTeslim, new { @class = "form-control" })
+    <br />
+    <label for="Tedarikci">Tedarikçi</label>
+    @Html.DropDownListFor(x => x.PersonelTeslimAlan, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

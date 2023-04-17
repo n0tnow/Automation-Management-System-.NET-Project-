@@ -1,0 +1,29 @@
+﻿@model TicariOtomasyon.Models.Siniflar.Tedarikci
+@{
+    ViewBag.Title = "TedarikciGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Tedarikçi Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("TedarikciGuncelle", "Tedarikci", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.TedarikciID)
+    @Html.LabelFor(x => x.TedarikciAd)
+    @Html.TextBoxFor(x => x.TedarikciAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TedarikciSoyad)
+    @Html.TextBoxFor(x => x.TedarikciSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TedarikciSehir)
+    @Html.TextBoxFor(x => x.TedarikciSehir, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TedarikciMail)
+    @Html.TextBoxFor(x => x.TedarikciMail, new { @class = "form-control" })
+
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+</div>
+}
+

@@ -1,0 +1,26 @@
+﻿@model TicariOtomasyon.Models.Siniflar.Tedarikci
+@{
+    ViewBag.Title = "TedarikciEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Tedarikçi Ekleme Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.TedarikciAd)
+    @Html.TextBoxFor(x => x.TedarikciAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TedarikciSoyad)
+    @Html.TextBoxFor(x => x.TedarikciSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TedarikciSehir)
+    @Html.TextBoxFor(x => x.TedarikciSehir, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TedarikciMail)
+    @Html.TextBoxFor(x => x.TedarikciMail, new { @class = "form-control" })
+    @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+

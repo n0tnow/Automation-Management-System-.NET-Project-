@@ -1,0 +1,35 @@
+﻿@using TicariOtomasyon.Models.Siniflar
+@model List<Tedarikci>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px;">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Sehir</th>
+        <th>Mail</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td> @k.TedarikciID</td>
+            <td> @k.TedarikciAd</td>
+            <td> @k.TedarikciSoyad</td>
+            <td> @k.TedarikciSehir</td>
+            <td> @k.TedarikciMail</td>
+            <td><a href="/Tedarikci/TedarikciGetir/@k.TedarikciID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Tedarikci/TedarikciSil/@k.TedarikciID" class="btn btn-success" style="background-color:darkblue">Sil</a></td>
+        </tr>
+    }
+
+
+</table>
+<a href="/Tedarikci/TedarikciEkle" class="btn btn-info">Tedarikçi Ekle</a>
+

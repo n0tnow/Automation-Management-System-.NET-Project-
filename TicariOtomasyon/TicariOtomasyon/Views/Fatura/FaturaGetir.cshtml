@@ -1,0 +1,42 @@
+﻿@model TicariOtomasyon.Models.Siniflar.Fatura
+@{
+    ViewBag.Title = "FaturaGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Fatura Güncelleme</h2>
+<br />
+@using (Html.BeginForm("FaturaGuncelle", "Fatura", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.FaturaID)
+    @Html.LabelFor(x => x.SeriNo)
+    @Html.TextBoxFor(x => x.SeriNo, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SeriNo, "", new { @style = "color:red" })
+    <br />
+    @Html.LabelFor(x => x.SiraNo)
+    @Html.TextBoxFor(x => x.SiraNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.VergiDairesi)
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Saat)
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TedarikciTeslim)
+    @Html.TextBoxFor(x => x.TedarikciTeslim, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.PersonelTeslimAlan)
+    @Html.TextBoxFor(x => x.PersonelTeslimAlan, new { @class = "form-control" })
+    <br />
+
+
+</div>
+    <button class="btn btn-warning">Güncelle</button>
+}
+
+
